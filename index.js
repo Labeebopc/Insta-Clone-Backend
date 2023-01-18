@@ -4,6 +4,7 @@ const cors =require('cors')
 const env = require("dotenv").config()
 const mongoose =require('mongoose')
 const postRoutes = require('./routes/postRoutes.js')
+mongoose.set('strictQuery', false)
 const port = process.env.PORT || 5000;
 
 const app =express();
