@@ -20,7 +20,7 @@ app.use("/api/v1/posts",postRoutes )
 const CONNECTION_URL = process.env.MONGO_URL;
 
 
-console.log(CONNECTION_URL);
+//console.log(CONNECTION_URL);
 app.listen(port,()=>console.log(`Server running on port :${port}`))
 mongoose.connect(CONNECTION_URL, {useNewUrlParser: true, useUnifiedTopology:true})
 .then(()=>console.log('Database connected Succesfully'))
