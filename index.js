@@ -1,6 +1,7 @@
 const express =require('express')
 const bodyParser =require('body-parser')
 const cors =require('cors')
+const env = require("dotenv").config()
 const mongoose =require('mongoose')
 const postRoutes = require('./routes/postRoutes.js')
 
@@ -15,7 +16,7 @@ app.use(cors());
 app.use("/api/v1/posts",postRoutes )
 
 
-const CONNECTION_URL = 'mongodb://localhost:27017/instaclone';
+const CONNECTION_URL = process.env.MONGO_URL;
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT,()=>console.log(`Server running on port :${PORT}`))
